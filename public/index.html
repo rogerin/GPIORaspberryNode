@@ -204,7 +204,7 @@
 
         setInterval(() => {
             let led = value ? 1 : 0;
-            fetch('http://192.168.15.114/led/' + led)
+            fetch('http://192.168.15.114:3000/led/' + led)
                 .then(res => res.json())
                 .then(data => {
                     // do something with data
