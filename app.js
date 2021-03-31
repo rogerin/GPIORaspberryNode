@@ -17,7 +17,7 @@ app.get('/led/:value', function(req, res, next) {
 
     led.write(statusLed);
 
-    led.read((err), value => { // Asynchronous read
+    led.read((err, value) => { // Asynchronous read
         if (err) {
             throw err;
         }
