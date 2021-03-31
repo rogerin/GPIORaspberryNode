@@ -29,41 +29,8 @@ app.get('/led/:value', function(req, res, next) {
             statusNow: value
         });
     })
-
-
-
 });
 
-
-// let stopBlinking = false;
-
-// // Toggle the state of the LED connected to GPIO17 every 200ms
-// const blinkLed = _ => {
-//     if (stopBlinking) {
-//         return led.unexport();
-//     }
-
-//     led.read((err, value) => { // Asynchronous read
-//         if (err) {
-//             throw err;
-//         }
-
-//         led.write(value ^ 1, err => { // Asynchronous write
-//             if (err) {
-//                 throw err;
-//             }
-//         });
-//     });
-
-//     setTimeout(blinkLed, 200);
-// };
-
-// blinkLed();X
-
-// // Stop blinking the LED after 5 seconds
-// setTimeout(_ => stopBlinking = true, 5000);
-
-
-app.listen(80, function() {
+app.listen(3000, function() {
     console.log('CORS-enabled web server listening on port 80')
 })
