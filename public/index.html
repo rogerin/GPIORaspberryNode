@@ -188,6 +188,7 @@
                 <!-- <img src="./img/casquinha.png" class="d-block w-50" alt="" srcset=""> -->
             </div>
             <div class="col">
+                <button type="button" onclick="eventClick()" class="btn btn-primary btn-lg">Large button</button>
 
             </div>
         </div>
@@ -202,7 +203,7 @@
     <script>
         let value = true;
 
-        setInterval(() => {
+        function eventClick() {
             let led = value ? 1 : 0;
             fetch('http://192.168.15.114:3000/led/' + led)
                 .then(res => res.json())
@@ -213,7 +214,21 @@
                 .catch(rejected => {
                     console.log(rejected);
                 });
-        }, 2000)
+        }
+
+
+        // setInterval(() => {
+        //     let led = value ? 1 : 0;
+        //     fetch('http://192.168.15.114:3000/led/' + led)
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             // do something with data
+        //             value = !value;
+        //         })
+        //         .catch(rejected => {
+        //             console.log(rejected);
+        //         });
+        // }, 2000)
     </script>
 
 </body>
