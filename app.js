@@ -1,6 +1,7 @@
 const cors = require('cors')
 const express = require('express');
 
+const { exec } = require("child_process");
 
 
 const Gpio = require('onoff').Gpio;
@@ -35,4 +36,6 @@ app.get('/led/:value', function(req, res, next) {
 
 app.listen(3000, function() {
     console.log('CORS-enabled web server listening on port 80')
+
+    exec("chromium-browser --start-fullscreen --app=http://192.168.15.114:3000")
 })
